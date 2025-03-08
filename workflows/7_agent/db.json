@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "amount": 2500.0,
+    "date": "2025-03-01",
+    "type": "OUT",
+    "description": "Gold ring import from Italy"
+  },
+  {
+    "id": 2,
+    "amount": 3000.0,
+    "date": "2025-03-02",
+    "type": "OUT",
+    "description": "Diamond necklace import from India"
+  },
+  {
+    "id": 3,
+    "amount": 1200.0,
+    "date": "2025-03-03",
+    "type": "OUT",
+    "description": "Custom duties for gemstone batch"
+  },
+  {
+    "id": 4,
+    "amount": 5000.0,
+    "date": "2025-03-05",
+    "type": "IN",
+    "description": "Sale of high-end diamond earrings"
+  },
+  {
+    "id": 5,
+    "amount": 800.0,
+    "date": "2025-03-07",
+    "type": "OUT",
+    "description": "Shipping and insurance for emerald shipment"
+  },
+  {
+    "id": 6,
+    "amount": 1200.0,
+    "date": "2025-03-10",
+    "type": "IN",
+    "description": "Bulk silver bracelets order"
+  },
+  {
+    "id": 7,
+    "amount": 150.0,
+    "date": "2025-03-11",
+    "type": "OUT",
+    "description": "Purchase of packaging materials"
+  },
+  {
+    "id": 8,
+    "amount": 2700.0,
+    "date": "2025-03-12",
+    "type": "OUT",
+    "description": "Ruby import from Thailand"
+  },
+  {
+    "id": 9,
+    "amount": 7200.0,
+    "date": "2025-03-15",
+    "type": "IN",
+    "description": "Online store sales of assorted jewelry"
+  },
+  {
+    "id": 10,
+    "amount": 300.0,
+    "date": "2025-03-16",
+    "type": "OUT",
+    "description": "Local courier fees"
+  },
+  {
+    "id": 11,
+    "amount": 2500.0,
+    "date": "2025-03-18",
+    "type": "OUT",
+    "description": "Custom fees for pearl shipment"
+  },
+  {
+    "id": 12,
+    "amount": 4500.0,
+    "date": "2025-03-20",
+    "type": "IN",
+    "description": "Exclusive watch sale"
+  },
+  {
+    "id": 13,
+    "amount": 550.0,
+    "date": "2025-03-24",
+    "type": "OUT",
+    "description": "Store display materials"
+  },
+  {
+    "id": 14,
+    "amount": 6200.0,
+    "date": "2025-03-25",
+    "type": "IN",
+    "description": "Wholesale gold bracelet order"
+  },
+  {
+    "id": 15,
+    "amount": 950.0,
+    "date": "2025-03-28",
+    "type": "OUT",
+    "description": "Insurance renewal for imported inventory"
+  },
+  {
+    "id": 16,
+    "amount": 2500.0,
+    "date": "2025-03-08",
+    "type": "OUT",
+    "description": "MacBook Pro for the office"
+  }
+]
