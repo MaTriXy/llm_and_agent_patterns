@@ -229,7 +229,8 @@ You can read more about it in this [dedicated README file](/workflows/7_agent/RE
 1. Install dependencies:
 
 ```bash
-pip install langchain langchain-anthropic langgraph pydantic
+uv init
+uv pip install -r pyproject.toml
 ```
 
 2. Configure API keys in `config.py`:
