@@ -10,6 +10,7 @@ For the purpose for this example, I used Anthropic's Claude, but you are able to
 4. [Routing](#4-routing)
 5. [Orchestrator-Worker](#5-orchestrator-worker)
 6. [Evaluator-Optimizer](#6-evaluator-optimizer)
+7. [Agent](#7-agent)
 
 ## 1. Augmented LLM
 
