@@ -16,6 +16,10 @@ For the purpose for this example, I used Anthropic's Claude, but you are able to
 
 This pattern enhances LLM capabilities through structured outputs and tool integration.
 
+### Goal:
+
+To overcome the limitations of raw LLM outputs by adding structure and external capabilities. This pattern helps ensure outputs follow specific formats and enables LLMs to interact with external systems through function calling.
+
 ### Features:
 
 - Structured Output Generation
@@ -24,6 +28,10 @@ This pattern enhances LLM capabilities through structured outputs and tool integ
 ### Use Cases:
 
 1. **Search Query Optimization**
+
+   _Goal:_ Transform user questions into optimized search queries with justification.
+
+   _Expected Output:_ A structured object containing an optimized search query and reasoning.
 
 ```python
 # Using Pydantic model:
@@ -40,6 +48,10 @@ output: SearchQuery = structured_llm.invoke("What is the capital of Israel?")
 ```
 
 2. **Math Operations**
+
+   _Goal:_ Enable LLMs to perform precise mathematical operations by calling external functions.
+
+   _Expected Output:_ Tool call objects that specify which functions to call with what parameters.
 
 ```python
 message = llm_with_tools.invoke("What is 2 times 3 and 9 plus 8?")
@@ -58,6 +70,10 @@ message = llm_with_tools.invoke("What is 2 times 3 and 9 plus 8?")
 
 Chains multiple LLM calls together in a sequential workflow with conditional branching.
 
+### Goal:
+
+To break complex tasks into manageable steps, allowing for iterative refinement and conditional processing paths. This pattern enables more complex reasoning by dividing tasks into specialized sub-tasks.
+
 ### Features:
 
 - Sequential Processing
@@ -67,6 +83,10 @@ Chains multiple LLM calls together in a sequential workflow with conditional bra
 ### Use Cases:
 
 1. **Joke Generation Pipeline**
+
+   _Goal:_ Create a multi-step joke creation process with quality checks and refinement.
+
+   _Expected Output:_ A state object containing the original joke, improved versions, and final polished joke.
 
 ```python
 class State(TypedDict):
@@ -89,6 +109,10 @@ state: State = chain.invoke({"topic": "cats"})
 
 Executes multiple LLM tasks concurrently and aggregates results.
 
+### Goal:
+
+To improve efficiency by running independent tasks simultaneously and combining their outputs. This pattern is ideal when multiple independent creative or analytical tasks need to be performed on the same input.
+
 ### Features:
 
 - Concurrent Task Execution
@@ -98,6 +122,10 @@ Executes multiple LLM tasks concurrently and aggregates results.
 ### Use Cases:
 
 1. **Creative Content Generation**
+
+   _Goal:_ Generate multiple creative content types for a single topic simultaneously.
+
+   _Expected Output:_ A state object containing different creative outputs (joke, story, poem) and an aggregated compilation.
 
 ```python
 class State(TypedDict):
@@ -122,6 +150,10 @@ state: State = parallel_chain.invoke({"topic": "rugelach"})
 
 Intelligently routes requests to appropriate handlers based on content analysis.
 
+### Goal:
+
+To direct user inputs to the most appropriate specialized handler based on intent or content type. This pattern creates more efficient workflows by avoiding unnecessary processing and leveraging specialized components.
+
 ### Features:
 
 - Content-based Routing
@@ -131,6 +163,10 @@ Intelligently routes requests to appropriate handlers based on content analysis.
 ### Use Cases:
 
 1. **Creative Writing Assistant**
+
+   _Goal:_ Analyze user requests and route them to specialized creative writing handlers.
+
+   _Expected Output:_ A state object containing the original input, detected route, and the specialized output from the appropriate handler.
 
 ```python
 class State(TypedDict):
@@ -151,6 +187,10 @@ state: State = router_chain.invoke({"input": "I want to hear a joke"})
 
 Implements a distributed workflow where an orchestrator plans tasks and workers execute them.
 
+### Goal:
+
+To separate high-level planning from detailed execution, allowing for better task distribution and parallelization. This pattern excels at complex document generation where content can be divided into independent sections.
+
 ### Features:
 
 - Task Planning
@@ -160,6 +200,10 @@ Implements a distributed workflow where an orchestrator plans tasks and workers 
 ### Use Cases:
 
 1. **Report Generation**
+
+   _Goal:_ Create a comprehensive report by planning sections and generating content for each section in parallel.
+
+   _Expected Output:_ A state object containing the report plan, completed section content, and the final assembled report.
 
 ```python
 class Section(BaseModel):
@@ -188,6 +232,10 @@ state: State = orchestrator_worker.invoke({
 
 Implements a feedback loop to continuously improve outputs based on evaluation.
 
+### Goal:
+
+To create self-improving systems that can evaluate their own outputs and refine them based on feedback. This pattern is valuable when output quality is critical and can be objectively evaluated.
+
 ### Features:
 
 - Output Generation
@@ -197,6 +245,10 @@ Implements a feedback loop to continuously improve outputs based on evaluation.
 ### Use Cases:
 
 1. **Suggestion Optimization**
+
+   _Goal:_ Generate high-quality suggestions by implementing a feedback loop that evaluates and improves outputs.
+
+   _Expected Output:_ A state object containing the optimized suggestion, evaluation feedback, and quality status.
 
 ```python
 class Feedback(BaseModel):
@@ -224,6 +276,24 @@ state: State = optimizer.invoke({
 ## 7. Agent
 
 You can read more about it in this [dedicated README file](/workflows/7_agent/README.md).
+
+### Goal:
+
+To create autonomous systems that can reason, plan, and execute multi-step tasks using tools and external resources. Agents excel at open-ended problems where the solution path isn't predetermined.
+
+### Features:
+
+- Tool Usage
+- Multi-step Reasoning
+- Autonomous Decision Making
+
+### Use Case:
+
+**Business Financial Assistant**
+
+_Goal:_ Create an intelligent assistant that can analyze financial data, answer complex queries, and perform financial operations.
+
+_Expected Output:_ Comprehensive responses to financial queries with supporting data from tool calls, including invoice analysis and creation.
 
 ## Setup
 
